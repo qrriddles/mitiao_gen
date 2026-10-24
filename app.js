@@ -1,5 +1,5 @@
 'use strict';
-const APP={version:'1.0.2',date:'2026-10-24',rows:[],orphanRows:[],warnings:[],overlaps:[],fileName:''};
+const APP={version:'1.0.3',date:'2026-10-24',rows:[],orphanRows:[],warnings:[],overlaps:[],fileName:''};
 const NS={p:'http://schemas.openxmlformats.org/presentationml/2006/main',a:'http://schemas.openxmlformats.org/drawingml/2006/main',r:'http://schemas.openxmlformats.org/officeDocument/2006/relationships',rel:'http://schemas.openxmlformats.org/package/2006/relationships',ct:'http://schemas.openxmlformats.org/package/2006/content-types'};
 const $=id=>document.getElementById(id);
 // Namespace-agnostic OOXML selectors. Browsers do not consistently match
@@ -187,8 +187,8 @@ function slideXml(layoutXml,r,show){
  return '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>'+serial(d);
 }
 async function generate(show){
- const raw=Uint8Array.from(atob(window.TEMPLATE_BASE64),c=>c.charCodeAt(0));
- const z=await JSZip.loadAsync(raw);
+ // Let JSZip decode the packaged base64 template directly (more compatible with mobile browsers).
+ const z=await JSZip.loadAsync(window.TEMPLATE_BASE64,{base64:true});
  const p=xml(await z.file('ppt/presentation.xml').async('string'));
  const rel=xml(await z.file('ppt/_rels/presentation.xml.rels').async('string'));
  const ct=xml(await z.file('[Content_Types].xml').async('string'));
