@@ -1,24 +1,8 @@
-v1.1.0-preview5 · 2026-10-24
-- Google Slides 兼容版：单列谜面在原谜面区域内水平居中；多列谜面及标准 PowerPoint 版不变。
-
-v1.1.0-preview4 · 2026-10-24
-- Google Slides 兼容版：五字谜面改为单列，字号 115 pt；四字及九至十字的既有调整不变。
-- PowerPoint 标准版逻辑不变。
-
-v1.1.0-preview3 · 2026-10-24
-- Google Slides 兼容版：4 字谜面优先单列（视版式高度使用 140/115 pt），9–10 字谜面保持两列并使用 115 pt。
-- 页面增加 PowerPoint 楷体字体建议及 Google Slides 排版兼容性提醒。
+v1.1.0 · 2026-10-24
+- 正式新增 Google Slides 兼容版（可编辑 PPTX）。
+- 优化 1–5 字谜面单列居中，5 字 115 pt，9–10 字双列 115 pt；保留 4 字字号调整。
+- 加入 PowerPoint 楷体建议与 Google Slides 排版差异提醒。
 - PowerPoint 标准版生成逻辑保持不变。
-
-v1.1.0-preview2 · 2026-10-24
-- Google Slides 兼容版：将谜面竖列转为明确的普通文本框，加入矩形形状定义及文字属性，以改善导入时文字消失的问题。
-- PowerPoint 标准版生成逻辑不变。
-- 尚待在 Google Slides 实际验证。
-
-v1.1.0-preview · 2026-10-24（仅供本地测试，不建议直接发布）
-- 新增 Google Slides 兼容版下载，保留标准 PowerPoint 导出逻辑。
-- 竖排文字改为普通横排文本框按字分行、从右至左分列，可继续编辑。
-- 需用户在 Google Slides 中检查字号、列间距、标点和长文本。
 
 v1.0.3 · 2026-10-24
 - 使用 JSZip 自带的 Base64 解码方式加载内置 PPT 模板，避免手机浏览器 atob 解码报错。
